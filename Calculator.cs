@@ -48,6 +48,7 @@ public class Calculator
             throw new InvalidDataException("InvalidDataException: Invalid data type for setting second integer");
         }
 
+        // stopped here, pick back up
         else if (var2Int == 0 && operation == "/")
         {
             throw new DivideByZeroException("DivideByZeroException:  Attempted to divide by zero.");
