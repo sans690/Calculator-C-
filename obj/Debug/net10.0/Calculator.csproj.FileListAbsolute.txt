@@ -1,0 +1,14 @@
+/Users/saniyahsmith/Calculator/bin/Debug/net10.0/Calculator
+/Users/saniyahsmith/Calculator/bin/Debug/net10.0/Calculator.deps.json
+/Users/saniyahsmith/Calculator/bin/Debug/net10.0/Calculator.runtimeconfig.json
+/Users/saniyahsmith/Calculator/bin/Debug/net10.0/Calculator.dll
+/Users/saniyahsmith/Calculator/bin/Debug/net10.0/Calculator.pdb
+/Users/saniyahsmith/Calculator/obj/Debug/net10.0/Calculator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/saniyahsmith/Calculator/obj/Debug/net10.0/Calculator.AssemblyInfoInputs.cache
+/Users/saniyahsmith/Calculator/obj/Debug/net10.0/Calculator.AssemblyInfo.cs
+/Users/saniyahsmith/Calculator/obj/Debug/net10.0/Calculator.csproj.CoreCompileInputs.cache
+/Users/saniyahsmith/Calculator/obj/Debug/net10.0/Calculator.dll
+/Users/saniyahsmith/Calculator/obj/Debug/net10.0/refint/Calculator.dll
+/Users/saniyahsmith/Calculator/obj/Debug/net10.0/Calculator.pdb
+/Users/saniyahsmith/Calculator/obj/Debug/net10.0/Calculator.genruntimeconfig.cache
+/Users/saniyahsmith/Calculator/obj/Debug/net10.0/ref/Calculator.dll
