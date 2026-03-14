@@ -4,21 +4,19 @@ public class Calculator
 {
     public static void Run(string[] args)
     {
-        string var1 = "";
-        string var2 = "";
+        string variable1 = "";
+        string variable2 = "";
         string operation = "";
-        int var1Int;
-        int var2Int;
 
         try
         {
-            List<int> resultInt = Vars(var1, var2);
+            List<double> resultNumber = Variables(variable1, variable2, operation);
 
-            var1Int = resultInt[0];
-            var2Int = resultInt[resultInt.Count - 1];
+            double variable1Number = resultNumber[0];
+            double variable2Number = resultNumber[resultNumber.Count - 1];
 
-            int resultOperation = Operations(var1Int, var2Int, operation);
-            Console.WriteLine(resultOperation);
+            (double resultOperation, string? usedOperation) = OperationsHandling(variable1Number, variable2Number, operation);
+            Console.WriteLine($"{variable1Number:0.0##} {usedOperation} {variable2Number:0.0##} = {resultOperation}");
         }
 
         catch (Exception ex)
@@ -27,63 +25,61 @@ public class Calculator
         }
     }
 
-    public static List<int> Vars(string? var1, string? var2)
+    public static List<double> Variables(string? variable1, string? variable2, string? operation)
     {
-        bool isInt = false;
-        List<int> list = new List<int>();
+        bool isNumber = false;
+        List<double> list = new List<double>();
 
-        var1 = Console.ReadLine();
-        isInt = int.TryParse(var1, out int var1Int);
-        if (isInt != true)
+        variable1 = Console.ReadLine();
+        isNumber = double.TryParse(variable1, out double variable1Number);
+        if (isNumber != true)
         {
-            throw new InvalidDataException("InvalidDataException: Invalid data type for setting first integer");
+            throw new InvalidDataException("Invalid data type for setting first number");
         }
 
-        list.Add(var1Int);
+        list.Add(variable1Number);
 
-        var2 = Console.ReadLine();
-        isInt = int.TryParse(var2, out int var2Int);
-        if (isInt != true)
+        variable2 = Console.ReadLine();
+        isNumber = double.TryParse(variable2, out double variable2Number);
+        if (isNumber != true)
         {
-            throw new InvalidDataException("InvalidDataException: Invalid data type for setting second integer");
+            throw new InvalidDataException("Invalid data type for setting second number");
         }
 
-        // stopped here, pick back up
-        else if (var2Int == 0 && operation == "/")
+        else if (variable2Number == 0 && operation == "/")
         {
-            throw new DivideByZeroException("DivideByZeroException:  Attempted to divide by zero.");
+            throw new DivideByZeroException("Attempted to divide by zero");
         }
 
-        list.Add(var2Int);
+        list.Add(variable2Number);
 
         return list;
-
     }
-    public static int Operations(int var1Int, int var2Int, string? operation)
+
+    public static (double resultOperation, string? usedOperation) OperationsHandling(double variable1Number, double variable2Number, string? operation)
     {
-        int result = 0;
+        double result = 0.0;
 
         operation = Console.ReadLine();
 
         switch (operation)
         {
             case "+":
-                result = var1Int + var2Int;
+                result = variable1Number + variable2Number;
                 break;
 
             case "-":
-                result = var1Int - var2Int;
+                result = variable1Number - variable2Number;
                 break;
 
             case "*":
-                result = var1Int * var2Int;
+                result = variable1Number * variable2Number;
                 break;
 
             case "/":
-                result = var1Int / var2Int;
+                result = variable1Number / variable2Number;
                 break;
         }
-
-        return result;
+        return (result, operation);
     }
 }
